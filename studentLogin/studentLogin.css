@@ -1,0 +1,103 @@
+.flex-div{
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+}
+.flex-col-50{
+    flex: 0 0 auto;
+    width: 50%;
+}
+.flex-col-33{
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+.flex-col-60{
+    flex: 0 0 auto;
+    width: 60%;
+}
+.flex-col-40{
+    flex: 0 0 auto;
+    width: 40%;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #F9FBFF;
+    
+}
+.logo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+.green-font{
+    color:#21b572 ;
+}
+.image-div{
+    margin: auto ;
+}
+.input-form{
+    display: block;
+    width: 80%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    margin-bottom: .5rem;
+}
+.margin-zero{
+    margin: 0;
+}
+.login{
+    margin-top: 2rem;
+}
+.button{
+    background-color: #21b572;
+    border: none;
+    border-radius:.2em;
+    color: #FFFFFF;
+    padding: .5rem  2rem .5rem 2rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+.button:hover{
+    background-color: #228f5e;
+}
+.blue-text{
+    color: #0da4ef;
+}
+.total-body{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    padding: 2rem;
+    border-radius:1rem;
+
+}
+.red-font{
+    text-decoration: none;
+}
+.red-font:hover{
+    text-decoration:underline;
+}
+.container{
+    margin-top:5rem;
+}
+.button-new{
+    background-color: #0DA4EF;
+    border: none;
+    border-radius:.2em;
+    color: #FFFFFF;
+    padding: .5rem  2rem .5rem 2rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+.button-new:hover{
+    background-color: #1685bd;
+}
+.title-anchor{
+    text-decoration: none;
+    color: black;
+}
