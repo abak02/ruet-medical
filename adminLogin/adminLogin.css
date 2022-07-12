@@ -20,6 +20,7 @@
     display: flex;
     flex-wrap: wrap; 
     align-items: center;
+    justify-content: space-between;
 }
 .flex-col-50{
     flex: 0 0 auto;
@@ -114,4 +115,8 @@ body{
 }
 .button-new:hover{
     background-color: #1685bd;
+}
+.res-image{
+    max-width: 100%;
+    height: auto;
 }

@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Login</title>
     <link rel="stylesheet" href="doctorLogin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 </head>
 <body>
     <div class="container">
         <div class="flex-div">
             <div class="flex-col-40 total-body">
                 <div >
-                    <h1 class="logo">Ruet Medical</h1>
+                    <a href="../home/index.html" class="home-link"><h1 class="logo">Ruet Medical</h1></a>
                     <h1 class="logo blue-text">Welcome Back!</h1>
                     <div class="login">
-                        <p class="margin-zero">Email</p>
-                    <input type="text" placeholder="Enter your Mail" class="input-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+                    <p class="margin-zero">Email</p>
+                    <input type="email" placeholder="Enter your Mail" class="input-form" id="email">
+
                     <p class='margin-zero'>Password</p>
-                    <input type="password" class="input-form" placeholder="Enter your password" />
-                    <button class="button" type="submit">Login</button>
+                    <input type="password" class="input-form" placeholder="Enter your password" id="password" />
+
+                    <button class="button" type="submit" onclick="checklogin()">Login</button>
                     </div>
-                    <a href="#" class="red-font">Forgot Password</a>
+                    <div id="tooltip">
+                        
+                    </div>
+                    <a href="../recoverPassword/recoverPassword.html" class="red-font">Forgot Password</a>
                 </div>
 
             </div>
@@ -34,10 +39,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="./doctorLogin.js"></script>
 </body>
 </html>

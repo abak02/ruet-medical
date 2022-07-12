@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.container{
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
 .flex-div{
     display: flex;
     flex-wrap: wrap; 
@@ -32,9 +48,9 @@ body{
 .green-font{
     color:#21b572 ;
 }
-.image-div{
+/* .image-div{
     margin: auto ;
-}
+} */
 .input-form{
     display: block;
     width: 80%;
@@ -63,6 +79,8 @@ body{
     padding: .5rem  2rem .5rem 2rem;
     margin-top: .25rem;
     margin-bottom: .25rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
 }
 .button:hover{
     background-color: #228f5e;
@@ -78,6 +96,7 @@ body{
 }
 .red-font{
     text-decoration: none;
+    color: black;
 }
 .red-font:hover{
     text-decoration:underline;
@@ -93,6 +112,8 @@ body{
     padding: .5rem  2rem .5rem 2rem;
     margin-top: .25rem;
     margin-bottom: .25rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
 }
 .button-new:hover{
     background-color: #1685bd;

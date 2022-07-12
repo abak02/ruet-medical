@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="adminLogin.css">
+
+</head>
+<body>
+    <div class="container ">
+        <div class="flex-div">
+            <div class="flex-col-40 total-body">
+                <div >
+                    <a href="../home/index.html" class="home-link"><h1 class="logo">Ruet Medical</h1></a>
+                    <h1 class="logo blue-text">Welcome Back!</h1>
+                    <div class="login">
+                        <p class="margin-zero">Username</p>
+                        <input type="text" placeholder="Enter your username" class="input-form" id="username-given">
+                        <p class='margin-zero'>Password</p>
+                        <input type="password" class="input-form" placeholder="Enter your password" id="password-given">
+                        <button class="button" type="submit" onclick="checklogin()">Login</button>
+                        <div style="color:orangered" id="tooltip"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex-col-40">
+                <div class="image-div">
+                    <img class ="image-middle res-image" src="../Assets/admin.webp">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+ <script src="./adminLogin.js"></script>
+</body>
+</html>

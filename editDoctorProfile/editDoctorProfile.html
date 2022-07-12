@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="editDoctorProfile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-item">
+            <a class="navbar-brand" href="../home/index.html">Ruet Medical</a>
+    </div>
+    <div class="margin-auto">
+        <div class="container">
+            <h1><span class="green-text">Edit</span> <span class="normal-text">Profile</span></h1>
+            <section class="general-information">
+                <h3 class="section-title">General Information</h3>
+            <div> 
+                <label for="name" class="margin-zero">Full Name</label><br>
+                <input type="text" id="full-name" name="name" class="input-form">   
+            </div>
+            <div class="flex-div">
+                <div class="flex-col-50">
+                    <label for="degree">Degree</label>
+                    <input type="text" id="designation" name="degree"  class="input-form">
+                        
+                </div>
+                <div class="flex-col-50">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" id="dob" name="dob" class="input-form"  />
+                </div>
+            </div>
+            </section>
+            <section class="contact-information">
+                <h3 class="section-title">Contact Information</h3>
+                <div class="flex-div">
+                <div class="flex-col-50">
+                    <label for="contact-no" class="margin-zero">Mobile No.</label>
+                    <input type="tel" id="contact-no" name="contact-no" class="input-form">
+                        
+                </div>
+                <div class="flex-col-50">
+                    <label for="email" class='margin-zero'>Email</label>
+                        <input type="email" class="input-form" name="email" id="email"/>
+                </div>
+                </div>
+            </section>
+            <section class="security-information">
+                <h3 class="section-title">Security Information</h3>
+                <label for="password" class="margin-zero">Password</label>
+                <input type="password" name="password" id="password" class="input-form">
+                <a class="change-password" href="#">Change Password</a>
+            </section>
+            <section class="address-information">
+                <h3 class="section-title">Address Information</h3>
+                <label class="margin-zero">Permanent Address</label>
+                <input type="address" name="permanentaddress" id="permanentaddress" class="input-form">
+                <p class="margin-zero">Present Address</p>
+                <input type="address" name="presentaddress" id="presentaddress" class="input-form">
+            </section>
+            <a href="../doctorProfile/doctorProfile.html"><button class="button" type="submit">Update profile</button></a>
+            
+            <!-- container -->
+        </div>
+    </div>
+    
+    <script src="./editDoctorProfile.js"></script>
+</body>
+</html>

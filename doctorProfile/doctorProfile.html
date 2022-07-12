@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="doctorProfile.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="">
+                <div>
+                    <a href="../home/index.html" class="logo">Ruet Medical</a>
+                </div>
+                <div>
+                    <div class="align-middle">
+                        <a id="overview">Overview </a>
+                        <img src="../Assets/details.svg" style="margin-right: 4rem" />
+                    </div>
+                    <div class="align-middle">
+                        <a href="../doctorProfile/doctorProfile.html">My Profile</a>
+                        <img src="../Assets/profile.svg" style="margin-right: 4rem" />
+                    </div>
+                    <div class="align-middle">
+                        <a id="edit-profile">Edit Profile</a>
+                        <img src="../Assets/pencil-square.svg" style="margin-right: 4rem" />
+                    </div>
+                </div>
+                <!-- <div class="bg-color-1" style="margin-top: 3rem;">
+                   <p>You can easily go to the appointed student list any time.</p> 
+                    <button class="button">Appointed Student</button>
+                </div> -->
+                <div class="margin-top-auto">
+                    <div class="align-middle">
+                        <a href="../doctorLogin/doctorLogin.html">Logout</a>
+                        <img src="../Assets/logout.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="../Assets/cover.png" class="res-image">
+                    <img src="../Assets/profile-pic.webp" class="res-image-1 round-image ">
+                    <h1 class="doctor-name" id="doctorName">John Doe</h1>
+                    <p class="doctor-name" id="designation">MBBS,FCPS</p>
+                    <hr>
+            </div>
+            <div class="profile">
+                <h1>My Profile</h1>
+                <div class="flex-div">
+                    <div class="flex-col-50">
+                        <p class="p-font">Full Name</p>
+                    </div>
+                    <div class="flex-col-50">
+                        <p class="p-font-1" id="full-name">John Doe</p>
+                    </div>
+                    
+                    
+                </div>
+                <hr>
+                <div class="flex-div">
+                    <div class="flex-col-50">
+                        <p class="p-font">Email</p>
+                    </div>
+                    <div class="flex-col-50">
+                        <p class="p-font-1" id="email">john.doe@gmail.com</p>
+                    </div>
+                    
+                   
+                </div>
+                <hr>
+                <div class="flex-div">
+                    <div class="flex-col-50">
+                        <p class="p-font">Date of Birth</p>
+                    </div>
+                    <div class="flex-col-50">
+                        <p class="p-font-1" id="dob">September 17,1998</p>
+                    </div>
+                    
+                    
+                </div>
+               
+            </div>
+            <div>
+                <h1>Summary</h1>
+                <div class="bg-color-3" style="margin-bottom: 20rem;">
+                    <h1 class="bebas">Service Given : 50+ students</h1>
+                    <h1 class="bebas">Today's Appointment : 10 Students</h1>
+                    <h1 class="bebas">Upcoming Appointment : 30+ students<span class="text-small bebas">*(within 3 days)</span> </h1>
+                </div>
+            </div>
+        </div>  
+            
+    </div>
+    <script src="./doctorProfile.js"></script>
+</body>
+
+</html>

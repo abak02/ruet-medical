@@ -4,52 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
     <title>RUET Medical</title>
 </head>
 <body>
-    <div class="container home-container">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <a class="navbar-brand logo" href="#">RUET Medical</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto  nav-font">
-                  <li class="nav-item">
-                    <a class="nav-link active " href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active " href="../doctorLogin/doctorLogin.html">Doctor</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active " href="../studentLogin/studentLogin.html">Student</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active " href="../staffLogin/staffLogin.html">Staff</a>
-                  </li>
-                  <button class="ms-3 button"><li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle font-color" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Login
-                    </a>
-                    <ul class="dropdown-menu dropdown-shadow" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="../doctorLogin/doctorLogin.html">Doctor</a></li>
-                      <li><a class="dropdown-item" href="../studentLogin/studentLogin.html">Student</a></li>
-                      <li><a class="dropdown-item" href="#">Admin</a></li>
-                      <li><a class="dropdown-item" href="../staffLogin/staffLogin.html">Staff</a></li>
-                    </ul>
-                  </li>
-                </button>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </div>
-    <div class="container home-container">
+    
+    <div class="container">
+      <div class="nav-item">
+          <a class="navbar-brand" href="#">Ruet Medical</a>
+      <div class="left-align">
+          <ul class="list-item">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="../doctorLogin/doctorLogin.html">Doctor</a></li>
+              <li><a href="../studentLogin/studentLogin.html">Student</a></li>
+              <li><a href="../staffLogin/staffLogin.html">Staff</a></li>
+             
+                  <div class="dropdown">
+                      <button class="dropbtn">Login</button>
+                      <ul class="dropdown-content">
+                          <li><a href="../doctorLogin/doctorLogin.html">Doctor</a></li>
+                          <li><a href="../studentLogin/studentLogin.html">Student</a></li>
+                          <li><a href="../staffLogin/staffLogin.html">Staff</a></li>
+                          <li><a href="../adminLogin/adminLogin.html">Admin</a></li>
+                      </ul>
+                  </div>
+                  
+              
+          </ul>
+      </div>
+      </div>
+      
+  </div>
+    <div class="container home-container"style="height:100vh">
         <div class="flex-div">
             <div class="flex-col-50">
                 <h1 class="text-home">Make an appointment</h1>
@@ -69,21 +55,33 @@
         <div class="flex-div">
             <div class="flex-col-33 ">
                 <div class="desc-div">
-                    <h5><img src="../Assets/chat-dots-fill.svg" >  Consult a Doctor</h5>
+                    <div class="align-middle">
+                        <img src="../Assets/chat-dots-fill.svg" >
+                        <h5 style="margin-left: .5em;font-size:16px;">  Consult a Doctor</h5>
+                    </div>
+                    
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, fuga!</p>
                 </div>
                 
             </div>
             <div class="flex-col-33">
                 <div class="desc-div">
-                    <h5><img src="../Assets/calendar-check-fill.svg" > Book an appointment</h5>
+                    <div class="align-middle">
+                        <img src="../Assets/calendar-check-fill.svg" >
+                    <h5 style="margin-left: .5em; font-size:16px;"> Book an appointment</h5>
+                    </div>
+                    
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, deserunt!</p>
                 </div>
                 
             </div>
             <div class="flex-col-33">
                 <div class="desc-div">
-                    <h5><img src="../Assets/medicine.svg" > Free Medicine</h5>
+                    <div class="align-middle">
+                        <img src="../Assets/medicine.svg" >
+                    <h5 style="margin-left: .5em;font-size:16px;"> Free Medicine</h5>
+                    </div>
+                    
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nobis.</p>
                 </div>
                 
@@ -117,10 +115,5 @@
       <p class="textCenter">©️ Copyright 2022 Abak | All rights Reserved</p>
     </footer>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>
