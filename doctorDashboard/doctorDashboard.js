@@ -7,6 +7,11 @@ const doctorName=document.getElementById('doctor-name');
 const desi = document.getElementById('designation');
 const myProfile=document.getElementById('my-profile');
 const editProfile=document.getElementById('edit-profile');
+const overview=document.getElementById('overview');
+
+myProfile.style.cursor="pointer";
+editProfile.style.cursor="pointer";
+overview.style.cursor="pointer";
 
 fetch(`http://localhost:6204/doctorlist/${emailValue}`)
 .then(res=>res.json())
@@ -23,3 +28,7 @@ myProfile.addEventListener("click", function(){
 editProfile.addEventListener("click", function(){
     location.href=`../editDoctorProfile/editDoctorProfile.html?email=${emailValue}`;
 })
+
+overview.addEventListener("click", function(){
+    location.href=`../doctorDashboard/doctorDashboard.html?email=${emailValue}`;
+});

@@ -20,26 +20,26 @@
         <h1><span class="blue-text">Summary</span> <span class="normal"></span> </h1>
         <div class="flex-div-1">
             <div class="flex-col-50">
-                <div class="desc-div-1 bg-1">
+                <div class="desc-div-1 bg-1 anim">
                     <h1 id="doctor-length"></h1>
                     <p>Doctors</p>
                 </div>
                 
             </div>
             <div class="flex-col-50">
-                <div class="desc-div-1 bg-2">
-                    <h1>3+</h1>
+                <div class="desc-div-1 bg-2 anim">
+                    <h1 id="staff-length"></h1>
                     <p>Staff</p>
                 </div>
             </div>
             <div class="flex-col-50">
-                <div class="desc-div-1 bg-3">
+                <div class="desc-div-1 bg-3 anim">
                     <h1>1000+</h1>
                     <p>Regi. Student</p>
                 </div>
             </div>
             <div class="flex-col-50">
-                <div class="desc-div-1 bg-4">
+                <div class="desc-div-1 bg-4 anim">
                     <h1>250+</h1>
                     <p>Service Given</p>
                 </div>
@@ -48,6 +48,7 @@
         </div>
     </div>
 
+    <!-- Add Doctor -->
     <div class="container">
         <div class="flex-div">
             <div class="flex-col-50">
@@ -67,10 +68,10 @@
                     <input type="text" placeholder="Enter Doctor's Institute" name="institute" class="input-form">
 
                     <p>Service Time:</p>
-                    <input type="radio" id="age1" name="shift1" value="10:30-12:30">
-                    <label for="age1">10:30-12:30</label><br>
-                    <input type="radio" id="age2" name="shift2" value="02:30-05:30">
-                    <label for="age2">02:30-05:00</label><br>  
+                    <input type="radio" id="docshift2" name="shift1" value="10:30-12:30">
+                    <label for="shift1">10:30-12:30</label><br>
+                    <input type="radio" id="docshift1" name="shift2" value="02:30-05:30">
+                    <label for="shift2">02:30-05:00</label><br>  
                     <br>
                     <label for="contact-no" class="margin-zero">Contact No.</label>
                     <input type="text" placeholder="Enter Contact No." name="contact" class="input-form">
@@ -93,21 +94,41 @@
             </div>
             <!-- Add stuff -->
             <div class="flex-col-50">
-                <h1><span class="blue-text">Add</span> <span class="normal">Staff</span> </h1>
+                <form action="http://localhost:6204/addstaff" method="post" target="dummyframe">
+                    <h1><span class="blue-text">Add</span> <span class="normal">Staff</span> </h1>
 
-                <label for="first-name" class="margin-zero">Staff Name</label>
-                <input type="text" placeholder="Enter staff Name" name="first-name" class="input-form">
+                    <label for="name" class="margin-zero">Staff Name</label>
+                    <input type="text" placeholder="Enter staff Name" name="name" class="input-form">
 
-                <label for="first-name" class="margin-zero">Address</label>
-                <input type="address" placeholder="Enter staff's Address" name="first-name" class="input-form">
+                    <label for="designation" class="margin-zero">Designation</label>
+                    <input type="text" placeholder="Enter staff designation" name="designation" class="input-form">
 
-                <label for="first-name" class="margin-zero">Contact No.</label>
-                <input type="text" placeholder="Enter staff's number" name="first-name" class="input-form">
+                    <label for="date-of-birth" class="margin-zero">Date of Birth</Degree</label>
+                    <input type="date" name="dob" class="input-form">
 
-                <label for="first-name" class="margin-zero">Service Time</label>
-                <input type="text" placeholder="Enter staff's service time" name="first-name" class="input-form">
+                    <label for="email" class="margin-zero">Email Address</label>
+                    <input type="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" class="input-form">
 
-                <a href="../studentLogin/studentLogin.html"> <button class="button" type="submit">Add Staff</button></a>
+                    <label for="password" class="margin-zero">Deafault Password</label>
+                    <input type="password" placeholder="Enter default password(user can change)" name="password" class="input-form">
+
+                    <label for="address" class="margin-zero">Address</label>
+                    <input type="address" placeholder="Enter staff's Address" name="address" class="input-form">
+
+                    <label for="contact" class="margin-zero">Contact No.</label>
+                    <input type="text" placeholder="Enter staff's number" name="contact" class="input-form">
+
+                    <p>Service Time:</p>
+                        <input type="radio" id="staffshift1" name="shift1" value="10:30-12:30">
+                        <label for="shift1">10:30-12:30</label><br>
+                        <input type="radio" id="staffshift2" name="shift2" value="02:30-05:30">
+                        <label for="shift2">02:30-05:00</label><br>  
+                        <br>
+
+                    <button class="button" type="submit">Add Staff</button>
+                </form>
+                
+            </div>
             </div>
         </div>
     </div>
@@ -121,21 +142,11 @@
                 </div>
             </div>
             <div class="flex-col-50">
-                <h1><span class="red-text">Remove</span> <span class="normal">Staff</span> </h1>
-                <div class="desc-div">
-                    <div class="flex-dir-col background">
-                        <h2>Robin Hossain</h2>
-                        <p class="margin-zero">Shop Manager</p>
-                        <button class="red-button">Remove</button>
-                    </div>
+                <h1><span class="red-text">Remove</span> <span class="normal">Staff</span> </h1> 
+                <div class="desc-div" id="staff-list">
+                    <!-- staff list generated using js -->
                 </div>
-                <div class="desc-div">
-                    <div class="flex-dir-col background">
-                        <h2>Roki Mondal</h2>
-                        <p class="margin-zero">Assistant Shop Manager</p>
-                        <button class="red-button">Remove</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

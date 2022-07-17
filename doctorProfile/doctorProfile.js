@@ -9,7 +9,11 @@ const email=document.getElementById('email');
 const dob=document.getElementById('dob');
 const overview=document.getElementById('overview');
 const editProfile=document.getElementById('edit-profile');
+const myProfile=document.getElementById('my-profile');
 
+overview.style.cursor="pointer";
+editProfile.style.cursor="pointer";
+myProfile.style.cursor="pointer";
 
 fetch(`http://localhost:6204/doctorlist/${emailValue}`)
 .then(res=>res.json())
@@ -27,4 +31,8 @@ overview.addEventListener("click",()=>{
 
 editProfile.addEventListener("click",()=>{
     location.href=`../editDoctorProfile/editDoctorProfile.html?email=${emailValue}`;
+});
+
+myProfile.addEventListener("click",()=>{
+    location.href=`../doctorProfile/doctorProfile.html?email=${emailValue}`;
 });

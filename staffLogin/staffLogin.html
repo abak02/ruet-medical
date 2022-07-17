@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staff Login</title>
-    <link rel="stylesheet" href="staffLogin.css">
-
-</head>
-<body>
-    <div class="container ">
-        <div class="flex-div">
-            <div class="flex-col-40 total-body">
-                <div >
-                    <a href="../home/index.html" class="home-link"><h1 class="logo">Ruet Medical</h1></a>
-                    <h1 class="logo blue-text">Welcome Back!</h1>
-                    <div class="login">
-                        <p class="margin-zero">Email</p>
-                    <input type="text" placeholder="Enter your Mail" class="input-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
-                    <p class='margin-zero'>Password</p>
-                    <input type="password" class="input-form" placeholder="Enter your password" />
-                    <a href="../stafMenu/staffMenu.html"><button class="button" type="submit">Login</button></a>
-                    </div>
-                    <a href="../recoverPassword/recoverPassword.html" class="red-font">Forgot Password</a>
-                    
-                </div>
-
-            </div>
-            <div class="flex-col-60">
-                <div class="image-div">
-                    <img class ="image-middle" src="../Assets/staff.svg">
-                </div>
+    <link rel="stylesheet" href="staffLogin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex-div">
+        <div class="flex-col-40 total-body">
+          <div>
+            <a href="../home/index.html" class="home-link"
+              ><h1 class="logo">Ruet Medical</h1></a
+            >
+            <h1 class="logo blue-text">Welcome Back!</h1>
+            <div class="login">
+              <p class="margin-zero">Email</p>
+              <input type="email" placeholder="Enter your email address" class="input-form" id="Email">
+              <p class="margin-zero">Password</p>
+              <input type="password" placeholder="Enter your password" class="input-form" id="Password">
+              <button class="button" type="submit" onclick="checklogin()">Login</button></a
+              >
+              <div id="tooltip">
                 
+              </div>
             </div>
+            <a href="../recoverPassword/recoverPassword.html" class="red-font"
+              >Forgot Password</a
+            >
+          </div>
         </div>
+        <div class="flex-col-60">
+          <div class="image-div">
+            <img class="image-middle" src="../Assets/staff.svg" />
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
 
 
+    <script src="./staffLogin.js"></script>
 
-
-</body>
+  </body>
 </html>
