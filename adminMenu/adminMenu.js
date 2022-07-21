@@ -32,7 +32,7 @@ function deletedoctor(id){
     .then(result=>{
         console.log('deleted successfully');
     })
-
+    location.reload();
 }
 
 fetch('http://localhost:6204/stafflist')

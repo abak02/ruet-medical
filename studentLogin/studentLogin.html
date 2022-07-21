@@ -17,10 +17,10 @@
                     <h1 class="logo blue-text">Welcome Back!</h1>
                     <div class="login">
                         <p class="margin-zero">Email</p>
-                    <input type="text" placeholder="Enter your Mail" class="input-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+                    <input type="text" placeholder="Enter your Mail" class="input-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" id="email">
                     <p class='margin-zero'>Password</p>
-                    <input type="password" class="input-form" placeholder="Enter your password" />
-                    <a href="../studentDashboard/studentDashboard.html"><button class="button" type="submit">Login</button></a>
+                    <input type="password" class="input-form" placeholder="Enter your password" id="password"/>
+                    <button class="button" onclick="checkLogin()">Login</button>
                     </div>
 
                     <a href="../recoverPassword/recoverPassword.html" class="red-font">Forgot Password</a>
@@ -37,5 +37,6 @@
             </div>
       </div> 
     </div>
+    <script src="./studentLogin.js"></script>
 </body>
 </html>

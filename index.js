@@ -110,6 +110,47 @@ client.connect(err=>{
 
 });
 
+//Student related functions
+client.connect(err=>{
+  const studentCollection = client.db("studentinfo").collection("studentInfo");
+  app.post('/addstudent',(req, res) => {
+    const studentInfo=req.body;
+    studentCollection.insertOne(studentInfo)
+    .then(result=>{
+      console.log("data inserted successfully");
+    })
+    res.send('Data inserted successfully');
+  })
+
+
+  // app.get('/doctorlist',(req, res) => {
+  //   doctorCollection.find({})
+  //   .toArray((err,data)=>{
+  //       res.send(data);
+  //       console.log(data);
+  //   })
+  // })
+  app.get('/studentlist/:email',(req, res) => {
+    const givemail = req.params.email;
+    console.log(givemail);
+    studentCollection.find({email:givemail})
+    .toArray((err,data)=>{
+        res.send(data);
+        console.log(data);
+    })
+  })
+
+  // app.delete('/deletedoctor/:id',(req,res)=>{
+  //   console.log(req.params.id);
+  //   doctorCollection.deleteOne({_id:ObjectId(req.params.id)})
+  //   .then((result)=>{
+  //     console.log(result);
+  //   })
+  // })
+
+  console.log('database connection established');
+})
+
 
 
 app.get('/',(req,res)=>{

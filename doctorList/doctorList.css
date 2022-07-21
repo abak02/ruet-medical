@@ -93,6 +93,18 @@ body{
     width: 100%;
     transition:.3s ease-in-out ;
 }
+.button-2{
+    background-color: var(--blue-color);
+    color: #F9FBFF;
+    padding:.5rem 1rem;
+    border-radius: .2rem;
+    text-align: center;
+    font-family: Poppins,sans-serif;
+    font-size: 1rem;
+    margin: 1rem 0rem;
+    transition:.3s ease-in-out ;
+    cursor: pointer;
+}
 .a-button{
     text-decoration: none;
 }
