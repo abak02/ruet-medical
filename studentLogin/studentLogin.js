@@ -16,7 +16,10 @@ function checkLogin(){
             const para=document.createElement('p');
             para.innerHTML=`Sorry, Try again with right credentials!`;
             toolTip.appendChild(para);
+            setTimeout(()=>{
+                toolTip.removeChild(para);
+            },2000);
         }
     })
-    console.log(userpasswords,useremail);
+    
 }

@@ -13,10 +13,15 @@ function checklogin(){
             location.href="../adminMenu/adminMenu.html"
         }
         else{
+            
             const toolTip=document.getElementById('tooltip');
             const para=document.createElement('p');
             para.innerHTML=`Sorry, Try again with right credentials!`;
             toolTip.appendChild(para);
+            setTimeout(()=>{
+                toolTip.removeChild(para);
+            },2000);
+            
         }
     })
     console.log(username,password);
