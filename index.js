@@ -161,6 +161,18 @@ client.connect((err) => {
       console.log("data inserted successfully");
     });
    });
+
+
+
+   app.get('/appointmentlist/:docmail', (req, res) => {
+    const doctormail=req.params.docmail;
+    console.log(doctormail);
+    appointmentCollection.find({doctormail: doctormail})
+    .toArray((err,result)=>{
+      res.send(result);
+    })
+   })
+
 });
 
 app.get("/", (req, res) => {
