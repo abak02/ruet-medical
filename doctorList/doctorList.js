@@ -17,7 +17,7 @@ fetch("http://localhost:6204/doctorlist")
         mail=user.email;
         doctorHTML=doctorHTML+`
         <div class='desc-div'>
-        <div class="flex-dir-col background" id="doctor">
+        <div class="flex-dir-col background" id="doctor"> 
             <h2>${user.name}</h2> 
             <p class="margin-zero">${user.degree}</p>
             <p class="margin-zero">${user.institute}</p>
@@ -103,6 +103,7 @@ function makeAppointment(){
     console.log("I am clicked");
     let selected;
     const stime=document.getElementById("stime").value;
+    console.log(stime);
     if(selectonetext===null){
         selected=selecttwotext;
     }

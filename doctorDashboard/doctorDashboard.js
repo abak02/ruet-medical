@@ -8,6 +8,16 @@ const desi = document.getElementById('designation');
 const myProfile=document.getElementById('my-profile');
 const editProfile=document.getElementById('edit-profile');
 const overview=document.getElementById('overview');
+let studentmail;
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy + '-' + mm + '-' + dd;
+console.log(today);
+
 
 myProfile.style.cursor="pointer";
 editProfile.style.cursor="pointer";
@@ -39,33 +49,55 @@ fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
 .then(data=>{
     console.log(data);
     let appointHTML="";
+    let upcomingHTML="";
     const appointmentlist=document.getElementById('appointmentlist');
+    const upcoming=document.getElementById('upcoming');
     data.forEach(user=>{
         fetch(`http://localhost:6204/studentlist/${user.studentmail}`)
         .then(res=>res.json())
         .then(studata=>{
             console.log(studata);
-            appointHTML=appointHTML+`
-            <div class="flex-col-50">
-            <div class="bg-color-1">
-                <h4>${studata[0].firstname+" "+studata[0].lastname}</h4>
-                <p>ID : ${studata[0].idno}</p>
-                <p>Department : ${studata[0].department}</p>
-                <p>Date : ${data[0].date}</p>
-                <p>Time : ${data[0].shift}</p>
-                <div class="flex-div-1">
+            if(user.date===today&&user.status==='false'){
+                appointHTML=appointHTML+`
                     <div class="flex-col-50">
-                        <a href="" class="red-font">View Details</a>
-                    </div>
-                    <div class="flex-col-50">
-                        <a href="../makePrescription/makePrescription.html" class="red-font color-font">Prescribe</a>
+                    <div class="bg-color-1">
+                        <h4>${studata[0].firstname+" "+studata[0].lastname}</h4>
+                        <p>ID : ${studata[0].idno}</p>
+                        <p>Department : ${studata[0].department}</p>
+                        <p>Date : ${user.date}</p>
+                        <p>Time : ${user.shift}</p>
+                        <div class="flex-div-1">
+                            <div class="flex-col-50">
+                                <a href="" class="red-font">View Details</a>
+                            </div>
+                            <div class="flex-col-50">
+                                <a style="cursor:pointer;" id="prescription" onclick="prescription('${user.studentmail}','${user._id}')" class="red-font color-font">Prescribe</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-                
-            </div>
-        </div>
-    `;
-    appointmentlist.innerHTML=appointHTML;
+            `
+            }
+            else if(user.status==='false'){
+                upcomingHTML=upcomingHTML+`
+                    <div class="flex-col-50">
+                        <div class="bg-color-2">
+                            <h4>${studata[0].firstname+" "+studata[0].lastname}</h4>
+                            <p>ID : ${studata[0].idno}</p>
+                            <p>Department : ${studata[0].department}</p>
+                            <p>Date : ${user.date}</p>
+                            <p>Time : ${user.shift}</p>
+                            <a href="" class="red-font">View Details</a>
+                        </div>
+                    </div>
+                `;
+            }
+            ;
+    
+        appointmentlist.innerHTML=appointHTML;
+        upcoming.innerHTML=upcomingHTML;
+    
         })
         
         
@@ -73,3 +105,10 @@ fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
     
     
 })
+
+
+
+function prescription(mailstu,id){
+    console.log(id);
+    location.href=`../makePrescription/makePrescription.html?email=${mailstu}&docmail=${emailValue}&id=${id}`;
+}

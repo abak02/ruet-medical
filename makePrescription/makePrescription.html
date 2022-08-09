@@ -28,93 +28,52 @@
         <div class="container">
             <h1><span class="green-text">Make</span> <span class="normal-text">Prescription</span></h1>
 
+            <form id="presform">
             <section class="details">
                 <h3 class="section-title">Details</h3>
-                <textarea  placeholder="Write about indication" rows="4" cols="10" class="input-form"></textarea>
+                <textarea id="details" name="details" placeholder="Write about indication" rows="4" cols="10" class="input-form"></textarea>
             </section>
 
             <section class="medical-test">
                 <h3 class="section-title">Medical Test<span class='small-text'>(*if needed)</span></h3>
-                <textarea  placeholder="Write medical test" rows="4" cols="10" class="input-form"></textarea>
+                <textarea id="medical-test" name="medicaltest" placeholder="Write medical test" rows="4" cols="10" class="input-form"></textarea>
             </section>
-
-
 
             <section class="medicine-information">
                 <h3 class="section-title">Medicine</h3>
-                <div class="flex-div">
-                    <div class="flex-col-50">
-                        <label for="first-name" class="margin-zero">Medicine Name</label>
-                            <input type="text" placeholder="Medicine Name" name="first-name" class="input-form">
-                            
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Frequency</label>
-                            <input type="text" name="last-name" class="input-form" placeholder="1+0+1" />
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Dosage(*days)</label>
-                            <input type="number" name="last-name" class="input-form" placeholder="Ex-3 days" />
-                    </div>
-                </div>
-                <div class="flex-div">
-                    <div class="flex-col-50">
-                        <label for="first-name" class="margin-zero">Medicine Name</label>
-                            <input type="text" placeholder="Medicine Name" name="first-name" class="input-form">
-                            
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Frequency</label>
-                            <input type="text" name="last-name" class="input-form" placeholder="1+0+1" />
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Dosage(*days)</label>
-                            <input type="number" name="last-name" class="input-form" placeholder="Ex-3 days" />
+                <div id="pres-div">
+                    <div class="flex-div">
+                        <div class="flex-col-50">
+                            <label for="medicine" class="margin-zero">Medicine Name</label>
+                                <input type="text" id="medicine" placeholder="Medicine Name" name="medicine" class="input-form">
+                                
+                        </div>
+                        <div class="flex-col-25">
+                            <label for="frequency" class='margin-zero'>Frequency</label>
+                                <input type="text" name="frequency" class="input-form" placeholder="1+0+1" />
+                        </div>
+                        <div class="flex-col-25">
+                            <label for="dosage" class='margin-zero'>Dosage(*days)</label>
+                                <input type="number" name="dosage" class="input-form" placeholder="Ex-3 days" />
+                                
+                        </div>
                     </div>
                 </div>
-                <div class="flex-div">
-                    <div class="flex-col-50">
-                        <label for="first-name" class="margin-zero">Medicine Name</label>
-                            <input type="text" placeholder="Medicine Name" name="first-name" class="input-form">
-                            
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Frequency</label>
-                            <input type="text" name="last-name" class="input-form" placeholder="1+0+1" />
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Dosage(*days)</label>
-                            <input type="number" name="last-name" class="input-form" placeholder="Ex-3 days" />
-                    </div>
-                </div>
-                <div class="flex-div">
-                    <div class="flex-col-50">
-                        <label for="first-name" class="margin-zero">Medicine Name</label>
-                            <input type="text" placeholder="Medicine Name" name="first-name" class="input-form">
-                            
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Frequency</label>
-                            <input type="text" name="last-name" class="input-form" placeholder="1+0+1" />
-                    </div>
-                    <div class="flex-col-25">
-                        <label for="last-name" class='margin-zero'>Dosage(*days)</label>
-                            <input type="number" name="last-name" class="input-form" placeholder="Ex-3 days" />
-                    </div>
-                </div>
+                <button type="button" onclick="plus()" class="button">+</button>
                 
             </section>
             <section class="suggestion">
                 <h3 class="section-title">Suggestion</h3>
-                <textarea  placeholder="Write some suggestion" rows="4" cols="10" class="input-form"></textarea>
+                <textarea  placeholder="Write some suggestion" name="suggestion" rows="4" cols="10" class="input-form"></textarea>
             </section>
             
-            <button class="button" type="submit">Save</button>
+            <button class="button" onclick="func()" type="submit">Save</button>
             <button class="button bg-color" type="submit">Print</button>
+            </form>
             <!-- container -->
         </div>
     </div>
     
-
+    <script src="./makePrescription.js"></script>
 </body>
 </html>

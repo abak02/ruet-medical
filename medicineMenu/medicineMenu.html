@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="medicineMenu.css" />
+    <title>Medicine Section</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="nav-item">
+          <a class="navbar-brand" href="../home/index.html">Ruet Medical</a>
+          <div class="left-align">
+            <ul class="list-item">
+              <div class="dropdown">
+                <img
+                  src="../Assets/profile-pic.webp"
+                  alt=""
+                  class="round-image"
+                />
+                <ul class="dropdown-content">
+                  <li><a href="../staffLogin/staffLogin.html">Logout</a></li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="flex-div-1">
+        <div class="flex-col-30">
+          <h1>
+            <span class="blue-text">Add</span>
+            <span class="normal">Medicine</span>
+          </h1>
+          <label for="medicinename">Enter Medicine Name</label>
+          <input
+            type="text"
+            name="medicinename"
+            id="medicinename"
+            class="input-form"
+            placeholder="Ex - Fexo"
+          />
+          <label for="medicinestrength">Enter Medicine Strength</label>
+          <input
+            type="text"
+            name="medicinestrength"
+            id="medicinestrength"
+            class="input-form"
+            placeholder="Ex-120mg"
+          />
+          <label for="dosage">Enter dosage type</label>
+          <input
+            type="text"
+            id="dosage"
+            name="dosage"
+            placeholder="Tablet,Capsule,Syrup"
+            class="input-form"
+          />
+          <label for="quantity"
+            >Enter Medicine Quantity<small>(*in box)</small></label
+          >
+          <input
+            type="text"
+            name="quantity"
+            id="quantity"
+            class="input-form"
+            placeholder="Ex-120mg"
+          />
+          <button
+            style="margin-top: 0.5rem"
+            type="submit"
+            onclick="addmedicine()"
+            class="button"
+          >
+            Add Medicine
+          </button>
+          <div id="tool-tip"></div>
+        </div>
+        <div class="flex-col-30">
+          <h1>
+            <span class="blue-text">All</span
+            ><span class="normal">Medicine</span>
+          </h1>
+          <div class="medicine" id="app-list"></div>
+        </div>
+        <div class="flex-col-30">
+          <h1>
+            <span class="blue-text">Edit</span
+            ><span class="normal">Medicine</span>
+          </h1>
+          <div class="medicine" id="med-list">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./medicineMenu.js"></script>
+  </body>
+</html>
