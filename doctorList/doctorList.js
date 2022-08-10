@@ -4,6 +4,13 @@ const urlParams=new URLSearchParams(window.location.search);
 const emailValue=urlParams.get('email');
 console.log(emailValue);
 
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy + '-' + mm + '-' + dd;
+console.log(today); 
 
 let doctorList=document.getElementById("doctor-list");
 let list=document.getElementById('app-list');
@@ -31,8 +38,6 @@ fetch("http://localhost:6204/doctorlist")
 })
 
 function myFunction(mail) {
-    console.log(mail);
-   
     
     fetch(`http://localhost:6204/doctorlist/${mail}`)
     .then(res => res.json())
@@ -52,13 +57,15 @@ function myFunction(mail) {
             <div class="button" id="shift1"  onclick="func1()"><h3 id="s1" >${data[0].shift1}</h3></div>
             <div class="button" id="shift2" onclick="func2()"><h3 id="s2" >${data[0].shift2}</h3></div>
             <div class="button-1" onclick="makeAppointment()"><h3>Take an appointment</h3></div>
-
+            <h4 class="para" id="yo"> Appointed Successfully</h4>
         </section>
         </div>
 
         `
         list.innerHTML=doctorData;
     })
+    
+    
 }
 
 const after={
@@ -99,9 +106,10 @@ function func2() {
 }
 
 
+
 function makeAppointment(){
     console.log("I am clicked");
-    let selected;
+    let selected,appointarr,newarr;
     const stime=document.getElementById("stime").value;
     console.log(stime);
     if(selectonetext===null){
@@ -111,24 +119,31 @@ function makeAppointment(){
         selected=selectonetext;
     }
     console.log(selected);
-    const appointment = emailValue+"/"+doctorname+"/"+mailid+"/"+stime+"/"+selected+"/"+"false";
-    // const appointment={
-    //     _id:"1234",
-    //     studentmail:emailValue,
-    //     doctorname:doctorname,
-    //     doctormail:mail,
-    //     date:stime,
-    //     shift:selected,
-    //     status:"false"
-    // }
-    console.log(appointment);
-    // let appoint=JSON.stringify(appointment);
-    fetch(`http://localhost:6204/addappointment/${emailValue}&${doctorname}&${mailid}&${stime}&${selected}&false`,
-    {method:'POST',
-    })
+    fetch(`http://localhost:6204/appointmentlist/${mailid}`)
     .then(res=>res.json())
-    .then(result=>{
+    .then(data=>{
+    appointarr=data;
+    newarr=appointarr.filter(app => app.date===today);
+    console.log(newarr);
+    console.log(appointarr);
+    if(newarr.length>10){
+        alert('Please select another doctor');
+    }
+    else{
+        fetch(`http://localhost:6204/addappointment/${emailValue}&${doctorname}&${mailid}&${stime}&${selected}&false`,
+        {method:'POST',
+        })
+        .then(res=>res.json())
+        .then(result=>{
         console.log('inserted successfully');
-    })
+        })
+        document.getElementById("yo").style.display="inline-block";
+        setTimeout(()=>{
+            location.reload();
+        },2000);
+    }
+    });
+    
+    
 
 }

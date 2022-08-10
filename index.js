@@ -232,9 +232,9 @@ client.connect((err) => {
       dosage: arr[3],
       quantity: arr[2]
     }).then((result) => {
-      console.log("data inserted successfully");
+        console.log("data received");
     });
-    res.send("data inserted successfully");
+
   });
 
   app.get("/medicinelist", (req, res) => {

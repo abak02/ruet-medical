@@ -16,7 +16,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
-console.log(today);
+console.log(today); 
 
 
 myProfile.style.cursor="pointer";
@@ -26,7 +26,6 @@ overview.style.cursor="pointer";
 fetch(`http://localhost:6204/doctorlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
-    console.log(data);
     doctorName.innerText=data[0].name;
     desi.innerText=data[0].degree;
 })
@@ -47,7 +46,6 @@ overview.addEventListener("click", function(){
 fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
-    console.log(data);
     let appointHTML="";
     let upcomingHTML="";
     const appointmentlist=document.getElementById('appointmentlist');
@@ -56,7 +54,6 @@ fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
         fetch(`http://localhost:6204/studentlist/${user.studentmail}`)
         .then(res=>res.json())
         .then(studata=>{
-            console.log(studata);
             if(user.date===today&&user.status==='false'){
                 appointHTML=appointHTML+`
                     <div class="flex-col-50">
@@ -109,6 +106,5 @@ fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
 
 
 function prescription(mailstu,id){
-    console.log(id);
     location.href=`../makePrescription/makePrescription.html?email=${mailstu}&docmail=${emailValue}&id=${id}`;
 }

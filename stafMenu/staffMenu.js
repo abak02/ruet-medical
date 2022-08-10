@@ -53,7 +53,7 @@ fetch('http://localhost:6204/medicinelist')
             <div class="background desc-div">
                 <p><b>${element1.medicinename} ${element1.medicinestrength}</b></p>
                 <p>${element1.dosage}</p>
-                <p>Quantity : ${element1.quantity} box</p>
+                <p>Quantity : ${element1.quantity} pcs</p>
             </div>
         `;
         applist.innerHTML=medicineHTML1;

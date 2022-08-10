@@ -10,17 +10,14 @@ function addmedicine(){
     .then(res=>res.json())
     .then(result=>{
         console.log("data inserted");
-        const toolTip=document.getElementById('tooltip');
-            const para=document.createElement('p');
-            para.innerHTML=`Medicine Added Successfully`;
-            toolTip.appendChild(para);
-            setTimeout(()=>{
-                toolTip.removeChild(para);
-            },2000);
+        
     })
+        setTimeout(()=>{
+          location.reload();
+        },1000);
 }
 
-let medicineHTML1="";
+let medicineHTML1="",prevam;
 let applist=document.getElementById("app-list");
 fetch('http://localhost:6204/medicinelist')
 .then(res=>res.json())
@@ -31,7 +28,7 @@ fetch('http://localhost:6204/medicinelist')
             <div class="background desc-div">
                 <p><b>${element1.medicinename} ${element1.medicinestrength}</b></p>
                 <p>${element1.dosage}</p>
-                <p>Quantity : ${element1.quantity} box</p>
+                <p>Quantity : ${element1.quantity} pcs</p>
                 <button class="button-1" onclick="edit('${element1._id}')">Edit</button>
             </div>
         `;
@@ -71,31 +68,35 @@ function edit(id) {
           class="input-form"
         />
         <label for="quantity"
-          >Edit Medicine Quantity<small></small></label
+          >Enter new medicine quantity<small></small></label
         >
         <input
           type="text"
           name="quantity"
           id="quan"
           class="input-form"
-          value="${data[0].quantity}"
+          placeholder="New quantity added with prevoius quantity"
         />
-        <button style="margin-top:.5rem;" onclick="update('${data[0]._id}')"class='button'>Update</button>
+        <button style="margin-top:.5rem;" onclick="update('${data[0]._id}','${data[0].quantity}')"class='button'>Update</button>
         `;
         medlist.innerHTML=medHTML;
 
     })
 }
 
-function update(id){
+function update(id,quantity){
     const mdname=document.getElementById('mdname').value;
     const mdstrength=document.getElementById('mdstrength').value;
     const quan=document.getElementById('quan').value;
     const dos=document.getElementById('dos').value;
-    const notundata=`${id}&${mdname}&${mdstrength}&${quan}&${dos}`;
+    const totalquan=parseInt(quan)+parseInt(quantity);
+    const notundata=`${id}&${mdname}&${mdstrength}&${totalquan}&${dos}`;
     fetch(`http://localhost:6204/updatemedicine/${notundata}`,{method:"PATCH"})
   .then(res=>res.json())
   .then(data=>{
     console.log('data inserted successfully');
   })
+  setTimeout(()=>{
+    location.reload();
+  },1000);
 }
