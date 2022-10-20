@@ -14,7 +14,14 @@ const ObjectId = require("mongodb").ObjectId;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
+app.set('port', (process.env.PORT || 6204));
+app.use(express.static(__dirname));
+app.set('views', __dirname);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 
 //admin related functions
 client.connect((err) => {
@@ -272,10 +279,11 @@ client.connect((err) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("i am connected");
+  res.render('./home/index.html');
 });
 
 
 
 
-app.listen(process.env.PORT, '0.0.0.0');
+app.listen(app.get('port'), function() {
+});
