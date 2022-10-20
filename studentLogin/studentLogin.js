@@ -3,7 +3,7 @@ console.log('I am connected');
 function checkLogin(){
     let useremail=document.getElementById('email').value;
     let userpasswords=document.getElementById('password').value;
-    fetch(`http://localhost:6204/studentlist/${useremail}`)
+    fetch(`/studentlist/${useremail}`)
     .then(res=>res.json())
     .then(data=>{
         const dbmail=data[0].email;

@@ -7,7 +7,7 @@ let doctorHTML="";
 let staffHTML="";
 
 
-fetch("http://localhost:6204/doctorlist")
+fetch("/doctorlist")
 .then(res=>res.json())
 .then(data=>{
     doctorLength.innerText=data.length+"+";
@@ -25,7 +25,7 @@ fetch("http://localhost:6204/doctorlist")
 })
 
 function deletedoctor(id){
-    fetch(`http://localhost:6204/deletedoctor/${id}`,
+    fetch(`/deletedoctor/${id}`,
     {method:'DELETE'
     })
     .then(res=>res.json())
@@ -35,7 +35,7 @@ function deletedoctor(id){
     location.reload();
 }
 
-fetch('http://localhost:6204/stafflist')
+fetch('/stafflist')
 .then(res=>res.json())
 .then(data=>{
     staffLength.innerText = data.length+"+";
@@ -52,7 +52,7 @@ fetch('http://localhost:6204/stafflist')
 })
 
 function deletestaff(id){
-    fetch(`http://localhost:6204/deletestaff/${id}`,
+    fetch(`/deletestaff/${id}`,
     {method:'DELETE'
     })
     .then(res=>res.json())

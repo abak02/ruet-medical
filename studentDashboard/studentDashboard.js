@@ -21,7 +21,7 @@ editprofile.style.cursor="pointer";
 myprofile.style.cursor="pointer"
 appoint.style.cursor="pointer";
 
-fetch(`http://localhost:6204/studentlist/${emailValue}`)
+fetch(`/studentlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
     console.log(data);

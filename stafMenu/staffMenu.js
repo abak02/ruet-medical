@@ -8,7 +8,7 @@ console.log(emailValue);
 const medicinesection=document.getElementById('medicine-section');
 let doctorList=document.getElementById("doctor-list");
 let medicineHTML="",medicine,frequency,dosage;
-fetch("http://localhost:6204/prescriptionlist")
+fetch("/prescriptionlist")
 .then(res=>res.json())
 .then(data=>{
     console.log(data);
@@ -44,7 +44,7 @@ fetch("http://localhost:6204/prescriptionlist")
 })
 let medicineHTML1="";
 let applist=document.getElementById("app-list");
-fetch('http://localhost:6204/medicinelist')
+fetch('/medicinelist')
 .then(res=>res.json())
 .then(data1=>{
     console.log(data1);

@@ -6,7 +6,7 @@ function addmedicine(){
     const quantity=document.getElementById('quantity').value;
     const dosage=document.getElementById('dosage').value;
 
-    fetch(`http://localhost:6204/addmedicine/${medicinename}&${medicinestrength}&${quantity}&${dosage}`,{method:'POST'})
+    fetch(`/addmedicine/${medicinename}&${medicinestrength}&${quantity}&${dosage}`,{method:'POST'})
     .then(res=>res.json())
     .then(result=>{
         console.log("data inserted");
@@ -19,7 +19,7 @@ function addmedicine(){
 
 let medicineHTML1="",prevam;
 let applist=document.getElementById("app-list");
-fetch('http://localhost:6204/medicinelist')
+fetch('/medicinelist')
 .then(res=>res.json())
 .then(data1=>{
     console.log(data1);
@@ -39,7 +39,7 @@ fetch('http://localhost:6204/medicinelist')
 function edit(id) {
     let medHTML="";
     const medlist=document.getElementById('med-list');
-    fetch(`http://localhost:6204/medicinelist/${id}`)
+    fetch(`/medicinelist/${id}`)
     .then(res=>res.json())
     .then(data => {
         medHTML=medHTML+`
@@ -91,7 +91,7 @@ function update(id,quantity){
     const dos=document.getElementById('dos').value;
     const totalquan=parseInt(quan)+parseInt(quantity);
     const notundata=`${id}&${mdname}&${mdstrength}&${totalquan}&${dos}`;
-    fetch(`http://localhost:6204/updatemedicine/${notundata}`,{method:"PATCH"})
+    fetch(`/updatemedicine/${notundata}`,{method:"PATCH"})
   .then(res=>res.json())
   .then(data=>{
     console.log('data inserted successfully');

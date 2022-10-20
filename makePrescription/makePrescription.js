@@ -33,7 +33,7 @@ function plus() {
   presdiv.innerHTML = medicineHTML;
 }
 
-fetch(`http://localhost:6204/doctorlist/${docmail}`)
+fetch(`/doctorlist/${docmail}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -42,7 +42,7 @@ fetch(`http://localhost:6204/doctorlist/${docmail}`)
       console.log(doctorname,doctormail);
     });
 
-  fetch(`http://localhost:6204/studentlist/${stumail}`)
+  fetch(`/studentlist/${stumail}`)
     .then((res) => res.json())
     .then((studata) => {
       console.log(studata);
@@ -57,11 +57,11 @@ function func() {
   console.log(doctormail, stuid,stuname,doctorname);
   const presform = document.getElementById("presform");
 
-  presform.action = `http://localhost:6204/addprescription/${doctorname}&${doctormail}&${stuid}&${stuname}`;
+  presform.action = `/addprescription/${doctorname}&${doctormail}&${stuid}&${stuname}`;
   presform.method = "POST";
   presform.target = "_blank";
 
-  fetch(`http://localhost:6204/updateappointment/${id}`,{method:"PATCH"})
+  fetch(`/updateappointment/${id}`,{method:"PATCH"})
   .then(res=>res.json())
   .then(data=>{
     console.log('data inserted successfully');

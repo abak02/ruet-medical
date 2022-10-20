@@ -4,7 +4,7 @@ function checklogin(){
     const givenemail=document.getElementById('Email').value;
     const givenpassword=document.getElementById('Password').value;
     console.log(givenemail,givenpassword);
-   fetch(`http://localhost:6204/stafflist/${givenemail}`)
+   fetch(`/stafflist/${givenemail}`)
    .then(res=>res.json())
    .then(data=>{
     

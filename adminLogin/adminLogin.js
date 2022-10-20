@@ -4,7 +4,7 @@ console.log(" i am connected")
 function checklogin(){
     const username=document.getElementById('username-given').value;
     const password=document.getElementById('password-given').value;
-    fetch('http://localhost:6204/adminLoginInfo')
+    fetch('/adminLoginInfo')
     .then(res=>res.json())
     .then(data=>{
         const dbusername=data[0].userName;

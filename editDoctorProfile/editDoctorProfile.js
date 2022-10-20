@@ -15,7 +15,7 @@ const presentAddress = document.getElementById('presentaddress');
 const permanentAddress = document.getElementById('permanentaddress');
 
 
-fetch(`http://localhost:6204/doctorlist/${emailValue}`)
+fetch(`/doctorlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
     console.log(data);

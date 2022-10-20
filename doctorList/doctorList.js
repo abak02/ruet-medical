@@ -16,7 +16,7 @@ let doctorList=document.getElementById("doctor-list");
 let list=document.getElementById('app-list');
 let doctorHTML="",doctorname="";
 let selectone="",selecttwo="",selectonetext,selecttwotext,mail,mailid;
-fetch("http://localhost:6204/doctorlist")
+fetch("/doctorlist")
 .then(res=>res.json())
 .then(data=>{
     console.log(data);
@@ -39,7 +39,7 @@ fetch("http://localhost:6204/doctorlist")
 
 function myFunction(mail) {
     
-    fetch(`http://localhost:6204/doctorlist/${mail}`)
+    fetch(`/doctorlist/${mail}`)
     .then(res => res.json())
     .then(data=>{
         let doctorData="";
@@ -119,7 +119,7 @@ function makeAppointment(){
         selected=selectonetext;
     }
     console.log(selected);
-    fetch(`http://localhost:6204/appointmentlist/${mailid}`)
+    fetch(`/appointmentlist/${mailid}`)
     .then(res=>res.json())
     .then(data=>{
     appointarr=data;
@@ -130,7 +130,7 @@ function makeAppointment(){
         alert('Please select another doctor');
     }
     else{
-        fetch(`http://localhost:6204/addappointment/${emailValue}&${doctorname}&${mailid}&${stime}&${selected}&false`,
+        fetch(`/addappointment/${emailValue}&${doctorname}&${mailid}&${stime}&${selected}&false`,
         {method:'POST',
         })
         .then(res=>res.json())

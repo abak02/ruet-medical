@@ -15,7 +15,7 @@ overview.style.cursor="pointer";
 editProfile.style.cursor="pointer";
 myProfile.style.cursor="pointer";
 
-fetch(`http://localhost:6204/doctorlist/${emailValue}`)
+fetch(`/doctorlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
     console.log(data);

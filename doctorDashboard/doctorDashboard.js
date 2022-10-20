@@ -23,7 +23,7 @@ myProfile.style.cursor="pointer";
 editProfile.style.cursor="pointer";
 overview.style.cursor="pointer";
 
-fetch(`http://localhost:6204/doctorlist/${emailValue}`)
+fetch(`/doctorlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
     doctorName.innerText=data[0].name;
@@ -43,7 +43,7 @@ overview.addEventListener("click", function(){
 });
 //appointment data
 
-fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
+fetch(`/appointmentlist/${emailValue}`)
 .then(res=>res.json())
 .then(data=>{
     let appointHTML="";
@@ -51,7 +51,7 @@ fetch(`http://localhost:6204/appointmentlist/${emailValue}`)
     const appointmentlist=document.getElementById('appointmentlist');
     const upcoming=document.getElementById('upcoming');
     data.forEach(user=>{
-        fetch(`http://localhost:6204/studentlist/${user.studentmail}`)
+        fetch(`/studentlist/${user.studentmail}`)
         .then(res=>res.json())
         .then(studata=>{
             if(user.date===today&&user.status==='false'){
