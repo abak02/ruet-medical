@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-app.set('port', (process.env.PORT || 6204));
+app.set('port', (process.env.PORT));
 app.use(express.static(__dirname));
 app.set('views', __dirname);
 app.engine('html', require('ejs').renderFile);
